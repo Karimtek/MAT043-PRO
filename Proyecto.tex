@@ -1,10 +1,11 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
+\usepackage[spanish,es-nodecimaldot]{babel}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage{siunitx}
 \usepackage{geometry}
 \usepackage{svg}
 \usepackage{float}
@@ -14,35 +15,80 @@
 \setlength{\headheight}{1pt}  
 \setlength{\headsep}{55pt}  
 
+\sisetup{group-separator = {,}}
+
+
 \pagestyle{fancy}
 \fancyhf{} 
 \fancyhead[L]{\includegraphics[width=4cm]{images/logo-usm2.png}}
 \fancyhead[R]{\textbf{MAT-043: Probabilidad y Estadística}}
 
+
+
+
 \begin{document}
 
 
 
-\title[Brief Article]{\includegraphics[scale=0.2]{example-image-a}\\ \textbf{Simulaciones y Probabilidad: Un Enfoque Computacional para la Estadística Aplicada}}
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}  % Espacio superior para centrar mejor
 
+    % Logo
+    \includesvg[scale=0.4]{images/logo-usm.svg}  % Ajusta el logo según la ruta de tu imagen
+    \vspace{2cm}  % Espacio entre el logo y el título
 
-\title{\textbf{Simulaciones y Probabilidad: Un Enfoque Computacional para la Estadística Aplicada} \\ }
-\author{Francisco González, Karime Jarufe\\ Universidad Técnica Federico Santa María}
-\date{Noviembre 25, 2024}
+    % Título
+    {\LARGE \textbf{Simulaciones y Probabilidad:}} \\[0.5cm]
+    {\LARGE \textbf{Un Enfoque Computacional para la Estadística Aplicada}} \\[1.5cm]
 
-\maketitle
+    % Información del curso
+    {\Large Proyecto MAT-043: Probabilidad y Estadística} \\[0.5cm]
+
+    % Autoría
+    \vspace{1cm}
+    {\large \textbf{Autores:}} \\[0.3cm]
+    {\large Francisco González, Karime Jarufe} \\[1.5cm]
+
+    % Profesor
+    {\large \textbf{Profesor:}} \\[0.3cm]
+    {\large Dr. Ronny O. Vallejos} \\[2.5cm]
+
+    % Fecha
+    {\large \textbf{Noviembre 25, 2024}} \\
+
+    \vfill  % Rellena el espacio restante para centrar los elementos
+
+    % Pie formal (opcional)
+    %{\footnotesize Universidad Técnica Federico Santa María \\ Departamento de Matemática}
+\end{titlepage}
+
 
 \newpage
 \tableofcontents
 \newpage
 
+\section{Motivación}
+
+En un mundo cada vez más impulsado por datos, el análisis estadístico y la modelación probabilística se han convertido en herramientas fundamentales para la toma de decisiones informadas. Estas metodologías permiten abordar problemas complejos, identificar patrones, y estimar resultados bajo condiciones de incertidumbre en diversos campos como la economía, la ingeniería, la gestión operativa y las ciencias aplicadas. La probabilidad y la estadística computacional, en particular, ofrecen soluciones prácticas y precisas a problemas que desafían los enfoques tradicionales, al combinar el rigor teórico con el poder del cálculo moderno.
+
+Este proyecto surge de la necesidad de explorar estas herramientas en escenarios reales, donde el análisis de datos y la simulación computacional se convierten en aliados indispensables para optimizar procesos, mejorar recursos y generar información valiosa. Ejemplos de estos desafíos incluyen modelar el comportamiento de mercados inmobiliarios, estimar la capacidad de atención en sistemas de transporte y hospitales, y prever escenarios operativos bajo incertidumbre.
+
+El uso de métodos computacionales como la simulación Monte Carlo resulta especialmente relevante, ya que permite analizar situaciones en las que las soluciones analíticas son inalcanzables o extremadamente complejas. Estos enfoques ofrecen una base robusta para enfrentar problemas que requieren respuestas precisas, dinámicas y adaptables a condiciones cambiantes.
+
+En esencia, este proyecto está motivado por el deseo de conectar el rigor teórico de la probabilidad y la estadística con aplicaciones prácticas y computacionales que resuelvan problemas reales. A través de esta unión, no solo se busca generar soluciones efectivas, sino también resaltar la importancia de la estadística computacional como una herramienta clave en la innovación, la planificación estratégica y la toma de decisiones basadas en datos.
+
 \section{Introducción}
 
-Este proyecto se enfoca en la aplicación de técnicas de probabilidad y estadística para abordar una serie de problemas prácticos en diversos contextos, utilizando herramientas computacionales avanzadas y métodos estadísticos de simulación. A través de este trabajo, se busca ilustrar cómo los principios teóricos de la probabilidad se pueden implementar y evaluar en escenarios del mundo real, proporcionando tanto soluciones analíticas como aproximaciones mediante simulación.
+El presente proyecto tiene como objetivo aplicar técnicas avanzadas de probabilidad y estadística para abordar problemas prácticos en contextos diversos. Utilizando herramientas computacionales modernas y métodos como la simulación Monte Carlo, este trabajo ilustra cómo los principios teóricos de la estadística pueden implementarse y evaluarse en situaciones reales, generando soluciones tanto analíticas como simuladas.
 
-En particular, se emplea la simulación Monte Carlo, una poderosa herramienta de análisis que permite resolver problemas complejos mediante la generación de variables aleatorias y la repetición de experimentos computacionales. Esta metodología es fundamental cuando los enfoques analíticos convencionales no son viables o cuando se requiere estimar resultados en situaciones de incertidumbre. A lo largo de este proyecto, se abordarán problemas como el análisis de distribuciones de precios, estimación de asientos extra en vuelos, y la capacidad operativa de sistemas complejos, entre otros.
+La simulación Monte Carlo, en particular, constituye una metodología fundamental en este proyecto, ya que permite modelar sistemas complejos mediante la generación de variables aleatorias y la repetición masiva de experimentos computacionales. Este enfoque resulta invaluable cuando los métodos analíticos convencionales no son viables o cuando los resultados deben estimarse en condiciones de incertidumbre. 
 
-El objetivo principal es combinar el rigor teórico con la experimentación numérica para generar soluciones precisas y comprensibles. Cada problema se analizará desde su base teórica, se implementarán modelos computacionales para su simulación y, finalmente, se discutirán los resultados obtenidos para proporcionar conclusiones útiles y aplicables en situaciones reales. A través de este enfoque, se demuestra la relevancia de los métodos estadísticos y la simulación en la toma de decisiones informadas, así como en la optimización de procesos y recursos en diversos ámbitos de la ingeniería y la ciencia aplicada.
+A lo largo del proyecto, se abordan problemas variados que reflejan la amplitud y versatilidad de las herramientas estadísticas. Entre estos, se incluyen el análisis de precios de venta de casas en un mercado inmobiliario, la optimización de recursos en vuelos comerciales mediante el cálculo de asientos extra, y la evaluación de la capacidad operativa en un sistema hospitalario. Cada uno de estos casos combina el análisis teórico con la implementación computacional para obtener resultados relevantes y precisos.
+
+El enfoque principal del proyecto es demostrar cómo las herramientas de probabilidad y estadística computacional no solo permiten entender fenómenos complejos, sino también ofrecer soluciones prácticas para optimizar procesos y recursos. Al aplicar estos métodos, se busca contribuir al desarrollo de sistemas más eficientes y adaptables, mostrando la relevancia de estas técnicas en la ingeniería, la ciencia aplicada y la toma de decisiones estratégicas.
+
+
 
 \section{Metodología}
 \subsection{Herramientas Utilizadas}
@@ -122,8 +168,8 @@ donde $\mu$ y $\sigma$ representan la media y la desviación estándar de los da
 
 El ajuste permitió estimar los siguientes parámetros:
 \begin{itemize}
-    \item \textbf{Media logarítmica ($\mu$):} 12.02 (valor estimado)
-    \item \textbf{Desviación estándar logarítmica ($\sigma$):} 0.40 (valor estimado)
+    \item \textbf{Media logarítmica ($\mu$):} 12.02 
+    \item \textbf{Desviación estándar logarítmica ($\sigma$):} 0.41 
 \end{itemize}
 
 Para verificar la bondad del ajuste, se superpuso la densidad ajustada sobre el histograma (figura \ref{fig:densidad_ajustada}), mostrando un buen grado de concordancia entre los datos y el modelo.
@@ -135,28 +181,45 @@ Una vez ajustada la distribución, se realizaron los siguientes cálculos releva
     \item \textbf{Probabilidad de precios mayores a 200,000 USD:}
     La probabilidad de que el precio de una casa exceda los 200,000 USD se calcula como:
     \[
-    P(X > 200,000) = 1 - F(200,000),
+    P(X > 200{,}000) = 1 - F(200{,}000),
     \]
-    donde $F(x)$ es la función de distribución acumulada de la distribución log-normal. Para este caso, el resultado obtenido fue:
+    donde $F(x)$ es la función de distribución acumulada de la distribución log-normal. Para este caso, el resultado obtenido computacionalmente fue:
     \[
-    P(X > 200,000) = 0.377.
+    P(X > 200{,}000) = 0.3248.
     \]
-    Esto indica que aproximadamente el 37.7\% de las casas tienen un precio superior a 200,000 USD.
+    Esto indica que aproximadamente el 32.5\% de las casas tienen un precio superior a 200,000 USD.
 
     \item \textbf{Valor esperado:}
-    El valor esperado del precio de las casas, dado el modelo ajustado, se calcula como:
+    El valor esperado del precio de las casas, dado el modelo ajustado, se calcula teóricamente como:
     \[
-    E[X] = e^{\mu + \sigma^2 / 2}.
+    E[X] = e^{\mu + \frac{\sigma^2}{2} }.
     \]
     Sustituyendo los valores estimados de $\mu$ y $\sigma$, se obtiene:
     \[
-    E[X] = e^{12.02 + 0.40^2 / 2} \approx 184,396 \, \text{USD}.
+    E[X] = e^{12.02 + \frac{0.41^2}{2}} \approx \num{180593} \, \text{USD}.
     \]
-    Esto indica que el precio promedio esperado de las casas en Ames es de aproximadamente 184,396 USD.
+    Esto indica que el precio promedio esperado de las casas en Ames es de aproximadamente 180,593 USD.
 \end{enumerate}
+
+\subsubsection{Comparación entre Resultados Computados y Teóricos}
+Una comparación entre los resultados obtenidos mediante simulación computacional y los calculados analíticamente muestra un alto grado de concordancia, pero con ligeras diferencias atribuibles a la precisión numérica y las aproximaciones inherentes a cada método:
+
+\begin{itemize}
+    \item \textbf{Probabilidad de precios mayores a 200,000 USD:} Tanto el cálculo teórico como el computacional arrojan un valor de \( P(X > 200,000) = 0.3248 \). Esto confirma que la simulación es consistente con la teoría, ya que la probabilidad computada coincide exactamente con la predicción del modelo ajustado.
+    \item \textbf{Valor esperado:} 
+    \begin{itemize}
+        \item \textbf{Computacional:} \( E[X] = \num{180593.49} \, \text{USD} \).
+        \item \textbf{Teórico:} \( E[X] \approx \num{180602.00} \, \text{USD} \) (calculado mediante la fórmula analítica con precisión extendida).
+    \end{itemize}
+    Aunque ambos resultados son muy cercanos, existe una diferencia menor, inferior al 0.05\%, que puede atribuirse a factores como el redondeo numérico en los cálculos computacionales y las aproximaciones en la estimación de los parámetros.
+
+\end{itemize}
 
 \subsubsection*{Conclusiones}
 El análisis muestra que los precios de venta de casas en Ames tienen una distribución asimétrica positiva y son bien modelados por una distribución log-normal. Este modelo permite calcular métricas clave como la probabilidad de precios superiores a un umbral y el valor promedio esperado, proporcionando una herramienta útil para comprender la dinámica del mercado inmobiliario en la región.
+
+La comparación entre los resultados teóricos y computacionales resalta la robustez del modelo ajustado, con discrepancias mínimas que no afectan la validez de las conclusiones. Estas diferencias reflejan las limitaciones inherentes a los métodos numéricos y resaltan la importancia de integrar tanto el análisis teórico como las simulaciones computacionales para obtener estimaciones precisas y confiables.
+
 
 
 
@@ -184,9 +247,9 @@ El análisis incluye los siguientes pasos:
 \subsubsection{Resultados de la Simulación}
 Tras ejecutar las 10,000 simulaciones, se obtuvo una estimación del promedio de asientos extra que pueden ser vendidos sin causar sobreventa. El resultado calculado fue:
 \[
-\text{Promedio de asientos extra vendidos: } 2602.05 \, \text{asientos.}
+\text{Promedio de asientos extra vendidos: } 8107.\overline{21} \, \text{asientos.}
 \]
-Este valor indica que, en promedio, la aerolínea podría ofrecer 2,602 asientos adicionales al mes en sus vuelos, mitigando las pérdidas asociadas a los pasajeros que no se presentan.
+Este valor indica que, en promedio, la aerolínea podría ofrecer \num{8107} asientos adicionales al mes en sus vuelos, mitigando las pérdidas asociadas a los pasajeros que no se presentan.
 
 \subsubsection*{Conclusiones}
 Este análisis demuestra que el uso de simulación Monte Carlo, combinado con el modelo de Poisson, es una herramienta poderosa para predecir escenarios en situaciones de incertidumbre. Los resultados obtenidos proporcionan una base sólida para que la aerolínea tome decisiones informadas sobre el número óptimo de asientos extra que se pueden vender en cada tipo de avión, maximizando ingresos y minimizando el riesgo de sobreventa. Este enfoque también puede extenderse a otros contextos operativos similares.
@@ -224,12 +287,17 @@ P(\text{Atender más de 500 autos}) = \frac{\text{Número de días con más de 5
 \subsubsection{Resultados de la Simulación}
 Tras ejecutar las 10,000 simulaciones, se obtuvo la siguiente estimación para la probabilidad de atención:
 \[
-P(\text{Atender más de 500 autos}) = 0.8732.
+P(\text{Atender más de 500 autos}) = 0.3546.
 \]
-Esto significa que, bajo las condiciones dadas, existe aproximadamente un 87.32\% de probabilidad de que el peaje logre atender más de 500 autos en un día.
+Esto significa que, bajo las condiciones dadas, existe aproximadamente un 35.46\% de probabilidad de que el peaje logre atender más de 500 autos en un día.
 
 \subsubsection*{Conclusiones}
-El análisis demuestra que el peaje tiene una alta probabilidad de cumplir con la demanda diaria de más de 500 autos. Este resultado es útil para evaluar la eficiencia del sistema actual y determinar si es necesario realizar ajustes, como aumentar la capacidad de atención de alguna ventanilla. La metodología empleada, basada en simulación Monte Carlo, también puede aplicarse a problemas similares en otros contextos operativos.
+El resultado obtenido sugiere que, bajo las condiciones operativas actuales de las ventanillas, el peaje tiene una probabilidad relativamente baja de alcanzar este umbral en un día típico.
+
+Este hallazgo es importante porque indica que, en promedio, el peaje no logra atender más de 500 autos diarios en una proporción significativa de los días. Esto podría ser útil para evaluar la eficiencia del sistema de atención actual y sugiere que, si el objetivo es aumentar la cantidad de autos atendidos, podrían considerarse medidas para optimizar la capacidad operativa de las ventanillas, como la redistribución de recursos o la mejora de los tiempos de atención.
+
+Además, la metodología de simulación Monte Carlo aplicada en este análisis proporciona una herramienta flexible y poderosa para evaluar situaciones de incertidumbre y tomar decisiones informadas. Este enfoque también podría aplicarse a otros problemas operativos en diferentes contextos, como la gestión de recursos en estaciones de peaje o en otras áreas de infraestructura pública.
+
 
 
 \subsection{Problema 4: Capacidad de una Sala de Operaciones}
@@ -251,21 +319,24 @@ Para estimar la cantidad de pacientes que pueden ser atendidos en un mes, se imp
     \item \textbf{Inicialización:} Se definió el tiempo total disponible por mes y se inicializaron los contadores de tiempo acumulado y pacientes atendidos.
     \item \textbf{Generación de tiempos:} Para cada paciente, se generaron aleatoriamente los tiempos de espera, cirugía y post-operatorio según sus respectivas distribuciones.
     \item \textbf{Verificación de capacidad:} Si el tiempo total acumulado más el tiempo requerido por el paciente no excedía el tiempo mensual disponible, el paciente era atendido y el tiempo se acumulaba. De lo contrario, la simulación se detenía para ese mes.
-    \item \textbf{Repetición:} Este proceso se repitió 1,000 veces para obtener una estimación confiable del número promedio de pacientes atendidos.
+    \item \textbf{Repetición:} Este proceso se repitió 10,000 veces para obtener una estimación confiable del número promedio de pacientes atendidos.
 \end{enumerate}
 
 \subsubsection{Resultados de la Simulación}
-Los resultados de las 1,000 simulaciones son los siguientes:
+Los resultados de las 10,000 simulaciones son los siguientes:
 \begin{itemize}
-    \item \textbf{Promedio de pacientes atendidos por mes:} 108.45 pacientes.
-    \item \textbf{Desviación estándar:} 4.73 pacientes.
-    \item \textbf{Intervalo de confianza al 95\%:} $[107.54, 109.36]$ pacientes.
+    \item \textbf{Promedio de pacientes atendidos por mes:} 116.96 pacientes.
+    \item \textbf{Desviación estándar:} 6.60 pacientes.
+    \item \textbf{Intervalo de confianza al 95\%:} [116.55, 117.37] pacientes.
 \end{itemize}
 
-Estos valores reflejan la capacidad promedio del sistema para atender pacientes bajo las condiciones dadas. La desviación estándar indica que la cantidad de pacientes atendidos varía ligeramente entre diferentes simulaciones debido a la variabilidad de los tiempos.
+Estos valores reflejan la capacidad promedio del sistema para atender pacientes bajo las condiciones dadas. La desviación estándar indica que la cantidad de pacientes atendidos varía ligeramente entre diferentes simulaciones debido a la variabilidad de los tiempos. El intervalo de confianza del 95\% proporciona una estimación precisa de la cantidad de pacientes que pueden ser atendidos, mostrando que es probable que el número real se encuentre dentro del rango mencionado.
 
 \subsubsection*{Conclusiones}
-El análisis demuestra que, en promedio, la sala de operaciones puede atender aproximadamente 108 pacientes por mes, con una variabilidad relativamente baja. Este resultado proporciona una base sólida para la planificación de recursos en la sala de operaciones, como la asignación de personal, insumos y programación de cirugías. La metodología utilizada, basada en simulación Monte Carlo, es efectiva para modelar sistemas complejos y puede adaptarse a diferentes escenarios operativos.
+El análisis muestra que, en promedio, la sala de operaciones puede atender aproximadamente \textbf{117 pacientes} por mes, con una desviación estándar de \textbf{6.60 pacientes}, lo que sugiere que la capacidad del sistema es bastante consistente, aunque existe algo de variabilidad entre las simulaciones. El intervalo de confianza del 95\% indica que la cantidad real de pacientes atendidos en un mes se encuentra con alta probabilidad entre \textbf{116.55} y \textbf{117.37}.
+
+Este resultado proporciona una base sólida para la planificación de recursos en la sala de operaciones, como la asignación de personal, insumos y programación de cirugías. Además, resalta la utilidad de la simulación Monte Carlo como herramienta eficaz para modelar sistemas operativos complejos y hacer predicciones confiables sobre su rendimiento. La metodología utilizada es aplicable no solo en el ámbito hospitalario, sino también en otros contextos operativos donde se requieren estimaciones bajo incertidumbre.
+
 
 
 \subsection{Problema 5: Distancia entre Distribuciones Normales}
