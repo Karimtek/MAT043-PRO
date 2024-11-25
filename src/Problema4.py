@@ -2,7 +2,7 @@ import numpy as np
 from scipy import stats
 
 def simular_mes_operaciones():
-    tiempo_total_mes = 30 * 6 * 60  # 30 días * 6 horas * 60 minutos
+    tiempo_total_mes = 30 * 6 * 60  # días * horas * minutos
     tiempo_acumulado = 0
     pacientes_operados = 0
 
@@ -28,7 +28,7 @@ def simular_mes_operaciones():
 
     return pacientes_operados
 
-# Ejecutar la simulación varias veces para obtener un promedio
+# Simulación de 10,000 meses
 num_simulaciones = 10000
 resultados = [simular_mes_operaciones() for _ in range(num_simulaciones)]
 
