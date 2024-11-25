@@ -10,7 +10,7 @@ std_dev_window_2 = 3.74  # sqrt(14)
 lambda_window_3 = 180  # Para la distribución exponencial
 
 # Número de corridas
-num_simulations = 10000
+num_simulations = 100000
 
 # Simulación de Monte Carlo
 count_over_500 = 0
@@ -31,3 +31,8 @@ for _ in range(num_simulations):
 # Calcular la probabilidad
 probability_over_500 = count_over_500 / num_simulations
 print(f"La probabilidad de que el peaje atienda más de 500 autos diarios es: {probability_over_500:.4f}")
+
+# desviacion estandar de la probabilidad
+std_dev = np.sqrt(probability_over_500 * (1 - probability_over_500) / num_simulations)
+
+print(f"Desviación estándar de la probabilidad: {std_dev:.6f}")

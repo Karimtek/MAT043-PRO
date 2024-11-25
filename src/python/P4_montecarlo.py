@@ -29,7 +29,7 @@ def simular_mes_operaciones():
     return pacientes_operados
 
 # Ejecutar la simulación varias veces para obtener un promedio
-num_simulaciones = 1000
+num_simulaciones = 10000
 resultados = [simular_mes_operaciones() for _ in range(num_simulaciones)]
 
 promedio_pacientes = np.mean(resultados)
@@ -39,8 +39,6 @@ print(f"Promedio de pacientes operados en un mes: {promedio_pacientes:.2f}")
 print(f"Desviación estándar: {desviacion_estandar:.2f}")
 
 # Intervalo de confianza del 95%
-intervalo_confianza = stats.t.interval(confidence=0.95, df=len(resultados)-1, 
-                                       loc=np.mean(resultados), 
-                                       scale=stats.sem(resultados))
+intervalo_confianza = stats.norm.interval(0.95, loc=promedio_pacientes, scale=desviacion_estandar / np.sqrt(num_simulaciones))
 
 print(f"Intervalo de confianza del 95%: {intervalo_confianza}")
