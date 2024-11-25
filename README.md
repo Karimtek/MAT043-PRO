@@ -1,6 +1,15 @@
 <!-- @format -->
+# Proyecto MAT043:  Probabilidad y Estadística
 
-# Proyecto de Análisis y Simulación en Estadística Aplicada
+#### Profesor que dicta el curso: Dr. Ronny Vallejos
+
+
+| Integrante         | Rol         | mail                                     |
+| ------------------ | ----------- | ---------------------------------------- |
+| Karime Jarufe      | 202330020-9 | [kjarufe](mailto:kjarufe@usm.cl)         |
+| Francisco González | 202330029-2 | [fgonzalezmi](mailto:fgonzalezmi@usm.cl) |
+
+---
 
 Este repositorio contiene el desarrollo completo del proyecto de análisis y simulación en estadística aplicada. El proyecto utiliza herramientas y técnicas avanzadas de probabilidad y estadística computacional para resolver una serie de problemas prácticos, aplicando simulación Monte Carlo y otros métodos estadísticos. La programación en **Python** se utiliza para implementar los modelos, realizar simulaciones y generar los resultados de los problemas planteados.
 
@@ -79,11 +88,3 @@ El proyecto también muestra cómo los métodos computacionales, como la simulac
      ```bash
      python src/problema1.py
      ```
-
-### Profesor que dicta el curso: Dr. Ronny Vallejos
-
-### Autores
-| Integrante         | Rol         | mail                                     |
-| ------------------ | ----------- | ---------------------------------------- |
-| Karime Jarufe      | 202330020-9 | [kjarufe](mailto:kjarufe@usm.cl)         |
-| Francisco González | 202330029-2 | [fgonzalezmi](mailto:fgonzalezmi@usm.cl) |
