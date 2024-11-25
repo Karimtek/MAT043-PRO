@@ -5,7 +5,7 @@ import seaborn as sns
 from scipy.stats import lognorm
 
 # Cargar datos
-url = 'ames-housing.csv'
+url = 'data/ames-housing.csv'
 data = pd.read_csv(url)
 sale_price = data['SalePrice']
 
