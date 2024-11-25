@@ -14,16 +14,18 @@ El proyecto está organizado de la siguiente manera:
 Proyecto
 │
 ├── src/
-│ ├── problema1.py
-│ ├── problema2.py
-│ ├── problema3.py
-│ ├── problema4.py
-│ ├── imagenes/ (# imágenes de los gráficos del proyecto)
-│ └── test/ (# carpeta para pruebas unitarias)
+│    ├── Problema1_graficos.py
+│    ├── Problema1_valores.py
+│    ├── Problema2.py
+│    ├── Problema3.py
+│    ├── Problema4.py
+│    ├── data/ (# contiene "ames-housing.csv" )
+│    ├── images/ (# imágenes de los gráficos del proyecto)
+│    └── test/ (# carpeta para pruebas unitarias)
 │
 ├── docs/
-│ ├── proyecto.tex
-│ └── proyecto.pdf
+│    ├── proyecto.tex
+│    └── proyecto.pdf
 │
 └── readme.md
 ```
@@ -32,10 +34,12 @@ Proyecto
 
 1. **`src/`**: Esta carpeta contiene el código fuente de los problemas planteados en el proyecto.
 
-   - **`problema1.py`**: Código relacionado con el análisis de precios de casas, incluyendo la visualización y el ajuste de una distribución log-normal a los datos de precios.
-   - **`problema2.py`**: Código para la simulación de Monte Carlo que estima la cantidad de asientos extra disponibles en vuelos, utilizando la distribución de Poisson para modelar los no-shows de los pasajeros.
-   - **`problema3.py`**: Código para simular la probabilidad de que un peaje logre atender más de 500 autos en un día, utilizando distribuciones normales y exponenciales.
-   - **`problema4.py`**: Código para la simulación de la capacidad de una sala de operaciones, modelando tiempos de espera y cirugía con distribuciones normales y exponenciales.
+   - **`Problema1_graficos.py`**: Código relacionado con el análisis de precios de casas, incluyendo la visualización y el ajuste de una distribución log-normal a los datos de precios.
+   - **`Problema1_valores.py`**: Código relacionado con el cálculo de probabilidad y esperanza relacionado con la problematica.
+   - **`Problema2.py`**: Código para la simulación de Monte Carlo que estima la cantidad de asientos extra disponibles en vuelos, utilizando la distribución de Poisson para modelar los no-shows de los pasajeros.
+   - **`Problema3.py`**: Código para simular la probabilidad de que un peaje logre atender más de 500 autos en un día, utilizando distribuciones normales y exponenciales.
+   - **`Problema4.py`**: Código para la simulación de la capacidad de una sala de operaciones, modelando tiempos de espera y cirugía con distribuciones normales y exponenciales.
+   - **`data/`**: carpeta en la que se almacena *ames-housing.csv*, archivo que contiene los datos estudiado en el problema 1.
    - **`image/`**: Carpeta que contiene las imágenes generadas, como los gráficos de los histogramas y las distribuciones ajustadas, que se utilizan para visualizar los resultados de los análisis.
    - **`test/`**: Carpeta reservada para pruebas unitarias.
 
@@ -44,7 +48,7 @@ Proyecto
    - **`proyecto.tex`**: El archivo fuente de LaTeX que contiene el documento completo del proyecto, donde se describen los métodos utilizados, los resultados y las conclusiones. Este archivo incluye tanto los cálculos teóricos como los resultados obtenidos computacionalmente.
    - **`proyecto.pdf`**: El archivo PDF resultante, generado a partir de `proyecto.tex`, que incluye todos los detalles del análisis, gráficos y conclusiones.
 
-3. **`README.md`**: Este archivo. Contiene información general sobre el repositorio, su estructura y cómo ejecutar los archivos correspondientes.
+3. **`README.md`**: Este archivo. Contiene información general sobre el repositorio.
 
 ## Propósito del Proyecto
 
@@ -57,7 +61,7 @@ En particular, los codigos en este repositorio abordan los siguientes problemas 
 - **Simulación de probabilidad de atención en un peaje**, con modelos de distribución normal y exponencial.
 - **Simulación de la capacidad de una sala de operaciones**, utilizando distribuciones normales, exponenciales y uniformes.
 
-El proyecto también muestra cómo los métodos computacionales, como la simulación Monte Carlo, pueden ser utilizados para obtener soluciones precisas cuando los enfoques analíticos tradicionales no son viables.
+El proyecto también muestra cómo los métodos computacionales, como la simulación Monte Carlo, pueden ser utilizados para obtener soluciones precisas.
 
 ## Instrucciones para Ejecutar el Proyecto
 
@@ -78,6 +82,7 @@ El proyecto también muestra cómo los métodos computacionales, como la simulac
 
 ### Profesor que dicta el curso: Dr. Ronny Vallejos
 
+### Autores
 | Integrante         | Rol         | mail                                     |
 | ------------------ | ----------- | ---------------------------------------- |
 | Karime Jarufe      | 202330020-9 | [kjarufe](mailto:kjarufe@usm.cl)         |
